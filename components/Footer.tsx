@@ -54,19 +54,19 @@ export default function Footer() {
 
   return (
     <motion.footer
-      className="h-screen flex items-center justify-center py-12 px-6 border-t border-gray-200"
+      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 border-t border-gray-200"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto max-w-6xl">
         <motion.div
-          className="bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-gray-200"
+          className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-200"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-4 sm:gap-6">
             <motion.div
               className="flex gap-6"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -97,7 +97,7 @@ export default function Footer() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <p className="text-[#3a4151] text-sm mb-2">
+              <p className="text-[#3a4151] text-xs sm:text-sm mb-2">
                 © {new Date().getFullYear()} Lucas Garbate. Todos los derechos
                 reservados.
               </p>

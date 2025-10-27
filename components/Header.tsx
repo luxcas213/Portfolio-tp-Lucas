@@ -16,15 +16,15 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-6 py-4 max-w-6xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-6xl">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-[#3a4151]">
+          <h1 className="text-xl sm:text-2xl font-bold text-[#3a4151]">
             Lucas Garbate
           </h1>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-8 items-center">
+          <nav className="hidden md:flex gap-6 lg:gap-8 items-center">
             <button
               onClick={() => navigateToSection("inicio")}
               className={`transition-colors font-medium ${
@@ -69,8 +69,9 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[#3a4151]"
+            className="md:hidden text-[#3a4151] p-2 hover:bg-gray-100 rounded-lg transition"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             <svg
               className="w-6 h-6"
@@ -92,43 +93,43 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden flex flex-col gap-4 mt-4 pb-4">
+          <nav className="md:hidden flex flex-col gap-3 mt-4 pb-4 bg-white/95 backdrop-blur-md rounded-lg p-4 shadow-lg border border-gray-200">
             <button
               onClick={() => navigateToSection("inicio")}
-              className={`text-left transition-colors font-medium ${
+              className={`text-left transition-colors font-medium py-2 px-3 rounded-lg ${
                 activeSection === "inicio"
-                  ? "text-[#f3023d]"
-                  : "text-[#3a4151] hover:text-[#f3023d]"
+                  ? "text-white bg-[#f3023d]"
+                  : "text-[#3a4151] hover:bg-gray-100"
               }`}
             >
               Inicio
             </button>
             <button
               onClick={() => navigateToSection("sobre-mi")}
-              className={`text-left transition-colors font-medium ${
+              className={`text-left transition-colors font-medium py-2 px-3 rounded-lg ${
                 activeSection === "sobre-mi"
-                  ? "text-[#f3023d]"
-                  : "text-[#3a4151] hover:text-[#f3023d]"
+                  ? "text-white bg-[#f3023d]"
+                  : "text-[#3a4151] hover:bg-gray-100"
               }`}
             >
               Sobre mí
             </button>
             <button
               onClick={() => navigateToSection("proyectos")}
-              className={`text-left transition-colors font-medium ${
+              className={`text-left transition-colors font-medium py-2 px-3 rounded-lg ${
                 activeSection === "proyectos"
-                  ? "text-[#f3023d]"
-                  : "text-[#3a4151] hover:text-[#f3023d]"
+                  ? "text-white bg-[#f3023d]"
+                  : "text-[#3a4151] hover:bg-gray-100"
               }`}
             >
               Proyectos
             </button>
             <button
               onClick={() => navigateToSection("contacto")}
-              className={`text-left transition-colors font-medium ${
+              className={`text-left transition-colors font-medium py-2 px-3 rounded-lg ${
                 activeSection === "contacto"
-                  ? "text-[#f3023d]"
-                  : "text-[#3a4151] hover:text-[#f3023d]"
+                  ? "text-white bg-[#f3023d]"
+                  : "text-[#3a4151] hover:bg-gray-100"
               }`}
             >
               Contacto

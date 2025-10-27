@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <motion.section
       id="contacto"
-      className="h-screen flex items-center justify-center px-6 overflow-y-auto pt-24 pb-12"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 overflow-y-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -38,19 +38,19 @@ export default function Contact() {
     >
       <div className="container mx-auto max-w-2xl">
         <motion.div
-          className="bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-gray-200"
+          className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-200"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold text-[#3a4151] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#3a4151] mb-3 sm:mb-4">
             Contacto
           </h2>
-          <p className="text-lg md:text-xl text-[#3a4151] mb-12">
+          <p className="text-base sm:text-lg md:text-xl text-[#3a4151] mb-8 sm:mb-12">
             ¿Tienes algún proyecto en mente? ¡Hablemos!
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -69,7 +69,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] placeholder-gray-400"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] placeholder-gray-400 text-sm sm:text-base"
                 placeholder="Tu nombre"
               />
             </motion.div>
@@ -92,7 +92,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] placeholder-gray-400"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] placeholder-gray-400 text-sm sm:text-base"
                 placeholder="tu@email.com"
               />
             </motion.div>
@@ -115,14 +115,14 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] resize-none placeholder-gray-400"
+                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] resize-none placeholder-gray-400 text-sm sm:text-base"
                 placeholder="Cuéntame sobre tu proyecto..."
               />
             </motion.div>
 
             <motion.button
               type="submit"
-              className="w-full bg-[#f3023d] hover:bg-[#0e0e0e] text-white px-6 py-3 rounded-full font-medium transition shadow-md hover:shadow-lg"
+              className="w-full bg-[#f3023d] hover:bg-[#0e0e0e] text-white px-6 py-2.5 sm:py-3 rounded-full font-medium transition shadow-md hover:shadow-lg text-sm sm:text-base"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
