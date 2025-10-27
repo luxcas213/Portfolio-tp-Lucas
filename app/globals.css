@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f8f8; /* gris muy claro */
+  --foreground: #3a4151; /* gris azulado oscuro */
+  --primary: #f3023d; /* rojo intenso */
+  --hover: #0e0e0e; /* negro */
+  --focus: #2196f3; /* azul */
+  --particles: #000000; /* negro */
+  --links: #b4b4b4; /* gris claro */
+}
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* Deshabilitar scroll completamente */
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad en secciones individuales */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
