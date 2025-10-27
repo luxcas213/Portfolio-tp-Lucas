@@ -13,12 +13,12 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("inicio");
 
   return (
-    <div className="min-h-screen w-full relative overflow-hidden bg-[#f8f8f8]">
+    <div className="min-h-screen h-auto w-full relative overflow-x-hidden overflow-y-auto bg-[#f8f8f8]">
       {/* Fondo con partículas */}
       <AnimatedBackground />
       
       {/* Contenido con z-index superior */}
-      <div className="relative z-10">
+      <div className="relative z-10 min-h-screen">
         <Header activeSection={activeSection} setActiveSection={setActiveSection} />
         
         {activeSection === "inicio" && <Hero setActiveSection={setActiveSection} />}

@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <motion.section
       id="contacto"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 overflow-y-auto"
+      className="min-h-screen h-auto flex items-start md:items-center justify-center px-4 sm:px-6 py-8 sm:py-20 pb-20"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
