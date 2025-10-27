@@ -36,7 +36,7 @@ export default function Contact() {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto max-w-2xl">
+      <div className="container mt-10 mx-auto max-w-2xl">
         <motion.div
           className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-200"
           initial={{ opacity: 0, scale: 0.95 }}
