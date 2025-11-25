@@ -1,31 +1,39 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí puedes agregar la lógica para enviar el formulario
-    console.log("Formulario enviado:", formData);
-    alert("¡Mensaje enviado! (Esta es una demo)");
-    setFormData({ name: "", email: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/tu-usuario",
+      color: "hover:bg-[#333] hover:text-white",
+      description: "Mira mis proyectos"
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://linkedin.com/in/tu-usuario",
+      color: "hover:bg-[#0077b5] hover:text-white",
+      description: "Conectemos profesionalmente"
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://instagram.com/tu-usuario",
+      color: "hover:bg-[#ff0080] hover:text-white",
+      description: "Sígueme en Instagram"
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      url: "mailto:tu@email.com",
+      color: "hover:bg-[#f3023d] hover:text-white",
+      description: "Envíame un correo"
+    }
+  ];
 
   return (
     <motion.section
@@ -43,95 +51,49 @@ export default function Contact() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#3a4151] mb-3 sm:mb-4">
-            Contacto
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#3a4151] mb-3 sm:mb-4 text-center">
+            Conectemos
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-[#3a4151] mb-8 sm:mb-12">
-            ¿Tienes algún proyecto en mente? ¡Hablemos!
+          <p className="text-base sm:text-lg md:text-xl text-[#3a4151] mb-8 sm:mb-12 text-center">
+            Encuentra todas mis redes sociales y formas de contacto
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-[#3a4151] mb-2"
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex flex-col items-center justify-center p-6 sm:p-8 rounded-2xl border-2 border-gray-200 bg-white transition-all duration-300 ${social.color} shadow-md hover:shadow-xl hover:scale-105 hover:border-transparent`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                whileHover={{ y: -5 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Nombre
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] placeholder-gray-400 text-sm sm:text-base"
-                placeholder="Tu nombre"
-              />
-            </motion.div>
+                <social.icon className="w-12 h-12 sm:w-14 sm:h-14 mb-3 text-[#3a4151] group-hover:text-current transition-colors" />
+                <h3 className="text-lg sm:text-xl font-bold text-[#3a4151] group-hover:text-current transition-colors mb-1">
+                  {social.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600 group-hover:text-current transition-colors text-center">
+                  {social.description}
+                </p>
+              </motion.a>
+            ))}
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-[#3a4151] mb-2"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] placeholder-gray-400 text-sm sm:text-base"
-                placeholder="tu@email.com"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-[#3a4151] mb-2"
-              >
-                Mensaje
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-gray-300 bg-white text-[#3a4151] focus:outline-none focus:ring-2 focus:ring-[#2196f3] focus:border-[#2196f3] resize-none placeholder-gray-400 text-sm sm:text-base"
-                placeholder="Cuéntame sobre tu proyecto..."
-              />
-            </motion.div>
-
-            <motion.button
-              type="submit"
-              className="w-full bg-[#f3023d] hover:bg-[#0e0e0e] text-white px-6 py-2.5 sm:py-3 rounded-full font-medium transition shadow-md hover:shadow-lg text-sm sm:text-base"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Enviar mensaje
-            </motion.button>
-          </form>
+          <motion.div
+            className="mt-8 sm:mt-10 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <p className="text-sm sm:text-base text-gray-600">
+              ¿Tienes algún proyecto en mente?{" "}
+              <span className="text-[#f3023d] font-semibold">¡No dudes en contactarme!</span>
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </motion.section>
