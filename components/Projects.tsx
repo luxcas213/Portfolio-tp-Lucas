@@ -21,7 +21,7 @@ export default function Projects() {
       image: "todo.png",
     },
     {
-      title: "Escáner de Suela 3D",
+      title: "TREVIAN",
       description:
         "App móvil en React Native que escanea la planta del pie usando LiDAR y genera mallas 3D.",
       technologies: ["React Native", "LiDAR", "3D Modeling", "iOS"],
@@ -29,7 +29,7 @@ export default function Projects() {
       image: "scanfoot.png",
     },
     {
-      title: "Juego 2D Top-Down",
+      title: "Proyecto 3ro",
       description:
         "Juego tipo roguelike en Unity donde el jugador sube de nivel, con enemigos inteligentes y cartas de acción.",
       technologies: ["Unity", "C#", "Game Design", "AI"],
@@ -37,7 +37,7 @@ export default function Projects() {
       image: "game2d.png",
     },
     {
-      title: "Sistema de Gestión de Pedidos",
+      title: "Sistema de Gestión de Pedidos autonomo",
       description:
         "Web app en Django para restaurantes, gestionando platos, pedidos y usuarios.",
       technologies: ["Django", "Python", "PostgreSQL", "REST API"],
